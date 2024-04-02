@@ -1,0 +1,73 @@
+package org.ink;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DayTwo {
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver = new ChromeDriver();
+		
+		//get() - to enter the url
+		driver.get("https://www.google.com");
+		
+		//manage();
+		driver.manage().window().maximize();
+		
+		System.out.println("=======================");
+		
+		//getTitle() - to get the title of the current web page
+		String title = driver.getTitle();
+		System.out.println(title);
+		
+		System.out.println("=======================");
+		
+		//getCurrentUrl() - to get current url
+		String currentUrl = driver.getCurrentUrl();
+		System.out.println(currentUrl);
+		
+		System.out.println("=======================");
+		
+		//getPageSource() - to get the page source of current webpage
+		String pageSource = driver.getPageSource();
+		System.out.println(pageSource);
+		
+		System.out.println("=======================");
+		
+		//findElement() - to get single web element
+//		WebElement username = driver.findElement(By.id("email"));
+//		username.sendKeys("Limitlesscoder");
+//		
+		//findElements() - to get the multiple web elements
+//		List<WebElement> findElements = driver.findElements(By.tagName("div"));
+//		System.out.println(findElements);
+		
+		System.out.println("=======================");
+		
+		//navigation 
+		driver.navigate().to("https://www.facebook.com");
+		Thread.sleep(3000);
+		//To navigate the present page to previous
+		driver.navigate().back();
+		Thread.sleep(3000);
+		//To navigate the previous page to the next 
+//		driver.navigate().forward();
+//		Thread.sleep(3000);
+//		//To refresh the current web page
+//		driver.navigate().refresh();
+		
+		//close()
+//		driver.close();
+		
+		//quit()
+		driver.quit();
+		
+		
+	}
+
+}
